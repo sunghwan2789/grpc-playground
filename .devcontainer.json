@@ -5,5 +5,7 @@
     "ms-dotnettools.csharp",
     "zxh404.vscode-proto3",
   ],
-  "onCreateCommand": "dotnet tool restore; dotnet dev-certs https --trust",
+  // Enable HTTPS with dev-certs:
+  // https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-6.0&tabs=visual-studio#trust-https-certificate-on-linux
+  "onCreateCommand": "dotnet tool restore; dotnet dev-certs https -ep /usr/local/share/ca-certificates/aspnet/https.crt --format PEM && update-ca-certificates",
 }

@@ -8,7 +8,7 @@ import "google/protobuf/wrappers.proto";
 
 service Core {
   rpc Heartbeat(HeartbeatRequest) returns (HeartbeatReply);
-  rpc SubscribeTicks(google.protobuf.Empty) returns (stream TickEvent);
+  rpc SubscribeTick(google.protobuf.Empty) returns (stream TickEvent);
 }
 
 message HeartbeatRequest { }
