@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package core.v1;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+service Core {
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatReply);
+  rpc SubscribeTicks(google.protobuf.Empty) returns (stream TickEvent);
+}
+
+message HeartbeatRequest { }
+
+message HeartbeatReply { }
+
+message TickEventRequest {
+  google.protobuf.DoubleValue interval_seconds = 1;
+}
+
+message TickEvent {
+  google.protobuf.Timestamp now = 1;
+}

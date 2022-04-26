@@ -1,0 +1,9 @@
+{
+  "image": "mcr.microsoft.com/dotnet/sdk:6.0",
+  "extensions": [
+    "editorconfig.editorconfig",
+    "ms-dotnettools.csharp",
+    "zxh404.vscode-proto3",
+  ],
+  "onCreateCommand": "dotnet tool restore; dotnet dev-certs https --trust",
+}
